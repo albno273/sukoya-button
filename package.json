@@ -11,7 +11,7 @@
     "start": "nuxt-ts start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist --branch=gh-pages -t --cleanup"
   },
   "dependencies": {
     "@nuxt/typescript-build": "^0.3.1",
