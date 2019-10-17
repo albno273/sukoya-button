@@ -1,16 +1,9 @@
 const colors = require('vuetify/es5/util/colors').default
 
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/sukoya-button/'
-        }
-      }
-    : {}
-
 module.exports = {
-  ...routerBase,
+  router: {
+    base: '/sukoya-button/'
+  },
   mode: 'spa',
   /*
    ** Headers of the page
