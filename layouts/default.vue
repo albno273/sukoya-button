@@ -9,6 +9,7 @@
       </v-container>
     </v-content>
     <v-footer class="white--text" :fixed="fixed" app color="secondary">
+      <!-- TODO: フッターになに書くか考える -->
       <span>&copy; 2019</span>
     </v-footer>
   </v-app>
@@ -20,9 +21,6 @@ import { Component, Vue } from 'nuxt-property-decorator';
 @Component
 export default class Default extends Vue {
   /* data */
-  clipped = false;
-  drawer = false;
-  fixed = false;
   items = [
     {
       icon: 'mdi-apps',
@@ -35,9 +33,6 @@ export default class Default extends Vue {
       to: '/inspire',
     },
   ];
-  miniVariant = false;
-  right = true;
-  rightDrawer = false;
   title = 'すこやボタン';
 }
 </script>
