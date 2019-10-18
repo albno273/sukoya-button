@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -13,6 +14,7 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
       "~/*": [
@@ -24,7 +26,8 @@
     },
     "types": [
       "@types/node",
-      "@nuxt/types"
+      "@nuxt/types",
+      "vuetify"
     ]
   },
   "exclude": [

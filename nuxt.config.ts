@@ -1,8 +1,13 @@
-const colors = require('vuetify/es5/util/colors').default
-
-module.exports = {
+export default {
+  extends: ['@nuxtjs/eslint-config-typescript'],
+  babel: {
+    plugins: [
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+    ],
+  },
   router: {
-    base: '/sukoya-button/'
+    base: '/sukoya-button/',
   },
   mode: 'spa',
   /*
@@ -17,16 +22,16 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/sukoya-button/favicon.ico'
-      }
-    ]
+        href: '/sukoya-button/favicon.ico',
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -47,14 +52,14 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
   /*
    ** Axios module configuration
@@ -68,27 +73,22 @@ module.exports = {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+        light: {
+          primary: '#e91e63',
+          secondary: '#880e4f',
+          accent: '#03a9f4',
+          error: '#f44336',
+          warning: '#ff9800',
+          info: '#4caf50',
+          success: '#3f51b5',
+        },
+      },
+    },
   },
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  }
-}
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true,
+  },
+};
