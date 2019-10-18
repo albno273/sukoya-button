@@ -31,7 +31,7 @@ export default class Error extends Vue {
   head() {
     if ('statusCode' in this.error) {
       // FIXME: object のプロパティ存在判定チェックどう通ればいいんだ…
-      const err = this.error as any;
+      const err = this.error as { statusCode?: number };
       const title = err.statusCode === 404 ? this.pageNotFound : this.otherError;
 
       return title;
