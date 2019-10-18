@@ -1,75 +1,60 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
+  <div>
+    <div class="mt-3 mb-5">
       <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
         <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank"> documentation </a>.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">
-            Nuxt Documentation
-          </a>
+          健屋さんからいつも元気をもらっています。
+          <br />勝手に作ってすみません。
           <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank">
-            Nuxt GitHub
-          </a>
+          <br />よかったら宣伝してください。
+          <div>
+            <a
+              href="https://twitter.com/share"
+              class="twitter-share-button"
+              data-url="https://albno273.github.io/sukoya-button/"
+              data-text="すこやボタン"
+              data-lang="ja"
+              data-hashtags="すこやすこ"
+              data-show-count="true"
+              >Tweet</a
+            >
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
+          </div>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">
-            Continue
-          </v-btn>
-        </v-card-actions>
       </v-card>
-    </v-flex>
-  </v-layout>
+    </div>
+    <div class="mt-3 mb-10">
+      <v-card>
+        <v-card-title>オマージュ / 参考 / 先駆者さま</v-card-title>
+        <v-card-text>
+          <a src="https://www.natorisana.love/" target="_blank">さなボタン(2)</a>
+          さま
+        </v-card-text>
+      </v-card>
+    </div>
+    <v-container fluid grid-list-md>
+      <div class="headline">
+        配信・動画名
+      </div>
+      <v-layout wrap>
+        <v-flex xs6 sm4 md2>
+          <v-card @click.stop>
+            <v-card-text>セリフ1</v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex xs6 sm4 md2>
+          <v-card @click.stop>
+            <v-card-text>セリフ2</v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+@Component
+export default class App extends Vue {}
 </script>

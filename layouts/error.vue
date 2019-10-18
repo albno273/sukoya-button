@@ -12,26 +12,29 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  layout: 'empty',
-  props: {
-    error: {
-      type: Object,
-      default: null
-    }
-  },
+<script lang="ts">
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
+
+@Component
+export default class Error extends Vue {
+  /* layout def */
+  public static layout = 'empty';
+
+  /* props */
+  @Prop({ type: Object, default: null }) error!: object;
+
+  /* data */
+  pageNotFound = '404 Not Found';
+  otherError = 'An error occurred';
+
+  /* head */
   head() {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
-  },
-  data() {
-    return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+    if ('statusCode' in this.error) {
+      // FIXME: object のプロパティ存在判定チェックどう通ればいいんだ…
+      const err = this.error as any;
+      const title = err.statusCode === 404 ? this.pageNotFound : this.otherError;
+
+      return title;
     }
   }
 }
