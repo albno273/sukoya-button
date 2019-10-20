@@ -53,6 +53,7 @@ module.exports = {
     'no-extra-semi': 'error',
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
-    'prefer-const': 'warn'
+    'prefer-const': 'warn',
+    'no-console': 'off'
   }
 }

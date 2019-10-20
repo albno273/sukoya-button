@@ -1,21 +1,24 @@
 <template>
   <div class="mt-3 mb-5">
     <v-card outlined>
-      <v-card-text>
-        健屋さんからいつも元気をもらっています。<br />
-        勝手に作ってすみません。<br />
-        <br />
-        よかったら宣伝してください。
-        <twitter-share /><br />
-        問い合わせや音声の追加依頼はこちらにお願いします: <a :href="gitHubIssueUrl" target_="blank">GitHub issue</a> or
-        <a :href="twitterUrl" target="_blank">Twitter</a>
-      </v-card-text>
-      <v-divider />
-      <v-card-title>オマージュ / 参考 / 先駆者さま</v-card-title>
-      <v-card-text>
-        <a :href="sanaButtonUrl" target="_blank">さなボタン(2)</a> さま<br />
-        <a :href="nijiSanjiWikiButtonUrl" target="_blank">にじさんじ所属ライバー ボタン</a> 製作者の皆さま
-      </v-card-text>
+      <v-container class="py-0">
+        <v-card-text>
+          健屋さんからいつも元気をもらっています。<br />
+          勝手に作ってすみません。<br />
+          <br />
+          よかったら宣伝してください。
+          <twitter-share /><br />
+          問い合わせや音声の追加依頼はこちらにお願いします:
+          <a :href="gitHubIssueUrl" target_="blank">GitHub issue</a> or
+          <a :href="twitterUrl" target="_blank">Twitter</a>
+        </v-card-text>
+        <v-divider />
+        <v-card-title>オマージュ / 参考 / 先駆者さま</v-card-title>
+        <v-card-text>
+          <a :href="sanaButtonUrl" target="_blank">さなボタン(2)</a> さま<br />
+          <a :href="nijiSanjiWikiButtonUrl" target="_blank">にじさんじ所属ライバー ボタン</a> 製作者の皆さま
+        </v-card-text>
+      </v-container>
     </v-card>
   </div>
 </template>
