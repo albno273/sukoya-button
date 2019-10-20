@@ -1,3 +1,5 @@
+import { Configuration } from 'webpack';
+
 export default {
   extends: ['@nuxtjs/eslint-config-typescript'],
   babel: {
@@ -93,5 +95,19 @@ export default {
   typescript: {
     typeCheck: true,
     ignoreNotFoundWarnings: true,
+  },
+  build: {
+    extend(config: Configuration) {
+      if (config.module) {
+        config.module.rules.push({
+          test: /\.(ogg|mp3|wav|mpe?g)$/i,
+          loader: 'file-loader',
+          exclude: /(node_modules)/,
+          options: {
+            name: '[path][name].[ext]',
+          },
+        });
+      }
+    },
   },
 };
