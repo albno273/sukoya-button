@@ -9,8 +9,8 @@
       </v-container>
     </v-content>
     <v-footer class="white--text" :fixed="fixed" app color="secondary">
-      <!-- TODO: フッターになに書くか考える -->
-      <span>&copy; 2019</span>
+      <span class="footer">音声の著作権は、全て「にじさんじ所属 公式バーチャルライバー 健屋花那」に帰属します。</span>
+      <span class="footer">コードは <a :href="mitLicenseUrl" target="_blank">MIT License</a> で公開しています。</span>
     </v-footer>
   </v-app>
 </template>
@@ -34,5 +34,12 @@ export default class Default extends Vue {
     },
   ];
   title = 'すこやボタン';
+
+  mitLicenseUrl = 'https://opensource.org/licenses/MIT';
 }
 </script>
+<style>
+.footer {
+  font-size: small;
+}
+</style>
