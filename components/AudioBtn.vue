@@ -52,7 +52,7 @@ export default class AudioBtn extends Vue {
 
   /* life cycle methods */
   mounted() {
-    // TODO: URL が不正だった場合のエラーハンドリング
+    // TODO: URL が不正だった場合のエラーハンドリングをどうするか
     this.audio.src = this.voiceLink;
     this.audio.load();
 
