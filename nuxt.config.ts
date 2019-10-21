@@ -8,9 +8,6 @@ export default {
       ['@babel/plugin-proposal-class-properties', { loose: true }],
     ],
   },
-  router: {
-    base: '/sukoya-button/',
-  },
   mode: 'spa',
   /*
    ** Headers of the page
@@ -30,7 +27,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/sukoya-button/syringe.ico',
+        href: 'syringe.ico',
       },
     ],
   },
