@@ -19,3 +19,10 @@ import { Component, Vue } from 'nuxt-property-decorator';
 @Component
 export default class Biography extends Vue {}
 </script>
+<style>
+@media screen and (max-width: 750px) {
+  iframe.twitter-timeline {
+    width: 724px !important;
+  }
+}
+</style>
