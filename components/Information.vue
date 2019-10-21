@@ -9,7 +9,7 @@
           よかったら宣伝してください。
           <twitter-share /><br />
           問い合わせや音声の追加依頼はこちらにお願いします:
-          <a :href="gitHubIssueUrl" target_="blank">GitHub issue</a> or
+          <a :href="gitHubIssueUrl" target="_blank">GitHub issue</a> or
           <a :href="twitterUrl" target="_blank">Twitter</a>
         </v-card-text>
         <v-divider />
