@@ -1,24 +1,17 @@
 <template>
-  <v-card
-    class="mx-auto"
-    @click.native="
-      onClick(
-        'https://raw.githubusercontent.com/sanabutton/sounds/master/%E3%81%95%E3%81%AA%E3%81%AE%E3%81%8A%E3%81%86%E3%81%9F%E3%80%82%E3%81%93%E3%81%93%E3%81%99%E3%81%93%E9%9B%91%E8%AB%87/5000%E5%84%84%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86.mp3',
-      )
-    "
-  >
+  <v-card class="mx-auto" @click.native="onClick(voiceLink)">
     <v-card-text class="pa-2">
       <v-row align="center" justify="center" class="mx-0">
-        <v-col class="pa-0 status-icon" cols="1">
+        <v-col class="py-0 pl-1 pr-0 status-icon" cols="1">
           <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: '#e91e63' }" />
           <fa v-else :icon="faPlay" size="lg" :style="{ color: '#e91e63' }" />
         </v-col>
-        <v-col class="pl-1" cols="11">
+        <v-col class="py-0 pl-3 pr-0" cols="11">
           <v-row class="mx-0 quote">
-            発言がここに入ります
+            {{ quote }}
           </v-row>
           <v-row class="mx-0 time">
-            時間がここに入ります
+            {{ convertTime(time) }}
           </v-row>
         </v-col>
       </v-row>
@@ -49,32 +42,48 @@ export default class AudioBtn extends Vue {
     return faStop;
   }
 
+  get voiceLink(): string {
+    const repoUri = 'https://raw.githubusercontent.com/albno273/sukoya-button-voices/master/';
+    const bcUri = this.date + '_' + encodeURIComponent(this.title.replace('/', ':'));
+    const fileUri = this.time.replace(':', '_') + '_' + encodeURIComponent(this.quote.replace('/', ':'));
+    return repoUri + bcUri + '/' + fileUri + '.mp3';
+  }
+
   /* methods */
   // [h:]mm:ss -> 「(h時間)mm分ss秒ごろ」に変換
-  convertTime(time: string): string {
-    const split = time.split(':');
-    if (this.isTimeHasHour(time)) {
-      return split[0] + '時間' + split[1] + '分' + split[2] + '秒ごろ';
+  convertTime(time: string | null): string {
+    if (time) {
+      const split = time.split(':');
+      if (this.isTimeHasHour(time)) {
+        return Number(split[0]) + '時間' + Number(split[1]) + '分' + split[2] + '秒ごろ';
+      } else {
+        return Number(split[0]) + '分' + split[1] + '秒ごろ';
+      }
     } else {
-      return split[0] + '分' + split[1] + '秒ごろ';
+      return '';
     }
   }
 
   // 時間の文字列に「○時間」が含まれてるか確認するだけ
-  isTimeHasHour(time: string): boolean {
-    const colonCnt = time.split(':').length - 1;
-    switch (colonCnt) {
-      case 1:
-        return false;
-      case 2:
-        return true;
-      default:
-        // ここに来たらなにかおかしい
-        return false;
+  isTimeHasHour(time: string | null): boolean {
+    if (time) {
+      const colonCnt = time.split(':').length - 1;
+      switch (colonCnt) {
+        case 1:
+          return false;
+        case 2:
+          return true;
+        default:
+          // ここに来たらなにかおかしい
+          return false;
+      }
+    } else {
+      return false;
     }
   }
 
   onClick(src: string) {
+    // TODO: URL が不正だった場合のエラーハンドリング
     if (!this.isPlaying) {
       const audio = new Audio(src);
       audio.load();
