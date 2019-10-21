@@ -3,7 +3,9 @@
     <div v-if="isNarrowThan750px">
       <div class="mb-3">
         <v-card outlined>
-          <biography />
+          <v-container>
+            <biography />
+          </v-container>
         </v-card>
       </div>
       <v-card outlined>
