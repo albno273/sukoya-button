@@ -3,7 +3,7 @@
     <a
       href="https://twitter.com/share"
       class="twitter-share-button"
-      data-url="https://albno273.github.io/sukoya-button/"
+      data-url="https://www.sukoya-kana.live"
       data-text="すこやボタン"
       data-lang="ja"
       data-hashtags="すこやカルテ"
