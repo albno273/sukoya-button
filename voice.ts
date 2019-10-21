@@ -11,6 +11,18 @@ export const voices: VoiceData = {
           quote: 'brrrr',
           time: '00:41',
         },
+        {
+          quote: '星間飛行',
+          time: '44:10',
+        },
+        {
+          quote: 'カタオモイ',
+          time: '49:18',
+        },
+        {
+          quote: 'God knows...',
+          time: '54:16',
+        },
       ],
     },
   ],
