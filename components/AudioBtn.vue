@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" @click.native="onClick(voiceLink)">
+  <v-card class="mx-auto" @click.native="onClick()">
     <v-card-text class="pa-2">
       <v-row align="center" justify="center" class="mx-0">
         <v-col class="py-0 pl-1 pr-0 status-icon" cols="1">
@@ -32,6 +32,7 @@ export default class AudioBtn extends Vue {
 
   /* data */
   isPlaying = false; // 再生中かどうか
+  audio = new Audio();
 
   /* computed */
   get faPlay() {
@@ -47,6 +48,23 @@ export default class AudioBtn extends Vue {
     const bcUri = this.date + '_' + encodeURIComponent(this.title.replace('/', ':'));
     const fileUri = this.time.replace(':', '_') + '_' + encodeURIComponent(this.quote.replace('/', ':'));
     return repoUri + bcUri + '/' + fileUri + '.mp3';
+  }
+
+  /* life cycle methods */
+  mounted() {
+    // TODO: URL が不正だった場合のエラーハンドリング
+    this.audio.src = this.voiceLink;
+    this.audio.load();
+
+    this.audio.addEventListener('ended', () => {
+      this.onEnd();
+    });
+  }
+
+  beforeDestroy() {
+    this.audio.removeEventListener('ended', () => {
+      this.onEnd();
+    });
   }
 
   /* methods */
@@ -82,20 +100,20 @@ export default class AudioBtn extends Vue {
     }
   }
 
-  onClick(src: string) {
-    // TODO: URL が不正だった場合のエラーハンドリング
-    if (!this.isPlaying) {
-      const audio = new Audio(src);
-      audio.load();
-
+  onClick() {
+    if (this.isPlaying) {
+      this.audio.pause();
+      this.audio.currentTime = 0;
+      this.isPlaying = false;
+    } else {
       this.isPlaying = true;
-      audio.play();
-
-      audio.addEventListener('ended', () => {
-        console.log('ended');
-        this.isPlaying = false;
-      });
+      this.audio.play();
     }
+  }
+
+  // 再生終了したとき
+  onEnd() {
+    this.isPlaying = false;
   }
 }
 </script>
