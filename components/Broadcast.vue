@@ -6,16 +6,9 @@
         <fa :icon="faYouTubeSquare" size="lg" :style="{ color: 'red' }" />
       </a>
     </div>
-    <v-layout wrap>
-      <v-flex xs6 sm4 md3>
-        <audio-btn
-          v-for="quote in quotes"
-          :key="quote.quote"
-          :date="date"
-          :title="title"
-          :quote="quote.quote"
-          :time="quote.time"
-        />
+    <v-layout row wrap>
+      <v-flex v-for="quote in quotes" :key="quote.quote" xs6 sm4 md3>
+        <audio-btn :date="date" :title="title" :quote="quote.quote" :time="quote.time" />
       </v-flex>
     </v-layout>
   </v-container>

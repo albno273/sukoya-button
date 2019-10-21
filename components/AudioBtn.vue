@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" @click.native="onClick()">
+  <v-card class="mx-auto" height="100%" @click.native="onClick()">
     <v-card-text class="pa-2">
       <v-row align="center" justify="center" class="mx-0">
         <v-col class="py-0 pl-1 pr-0 status-icon" cols="1">
