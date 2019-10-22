@@ -7,7 +7,7 @@
       </a>
     </div>
     <v-layout row wrap>
-      <v-flex v-for="quote in quotes" :key="quote.quote" xs6 sm4 md3>
+      <v-flex v-for="quote in quotes" :key="quote.quote" xs6 sm4 md2>
         <audio-btn :date="date" :title="title" :quote="quote.quote" :time="quote.time" />
       </v-flex>
     </v-layout>
