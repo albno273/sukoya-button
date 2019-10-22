@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="twitter-wrapper">
     <a
       class="twitter-timeline"
       data-height="630"
@@ -19,3 +19,14 @@ import { Component, Vue } from 'nuxt-property-decorator';
 @Component
 export default class Biography extends Vue {}
 </script>
+<style>
+@media screen and (max-width: 750px) {
+  iframe.twitter-timeline {
+    width: 724px !important;
+  }
+
+  .twitter-wrapper {
+    padding: 4px 4px 0;
+  }
+}
+</style>
