@@ -45,8 +45,8 @@ export default class AudioBtn extends Vue {
 
   get voiceLink(): string {
     const repoUri = 'https://raw.githubusercontent.com/albno273/sukoya-button-voices/master/';
-    const bcUri = this.date + '_' + encodeURIComponent(this.title.replace('/', ':'));
-    const fileUri = this.time.replace(':', '_') + '_' + encodeURIComponent(this.quote.replace('/', ':'));
+    const bcUri = this.date + '_' + encodeURIComponent(this.title.replace(/\//g, ':'));
+    const fileUri = this.time.replace(/:/g, '_') + '_' + encodeURIComponent(this.quote.replace(/\//g, ':'));
     return repoUri + bcUri + '/' + fileUri + '.mp3';
   }
 
