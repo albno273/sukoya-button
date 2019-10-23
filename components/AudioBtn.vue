@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" height="100%" @click.native="onClick()">
+  <v-card class="mx-auto" height="100%" :loading="isLoading" @click.native="onClick()">
     <v-card-text class="button-content pa-2">
       <v-row align="stretch" justify="center" class="button-content ml-1 mr-0">
         <v-col align-self="center" justify-self="center" class="pa-0 status-icon" cols="1">
@@ -32,6 +32,8 @@ export default class AudioBtn extends Vue {
 
   /* data */
   isPlaying = false; // 再生中かどうか
+  isLoaded = false; // 音声ファイルロード済みかどうか
+  isLoading = false; // 音声ファイルロード中かどうか
   audio = new Audio();
 
   /* computed */
@@ -52,10 +54,6 @@ export default class AudioBtn extends Vue {
 
   /* life cycle methods */
   mounted() {
-    // TODO: URL が不正だった場合のエラーハンドリングをどうするか
-    this.audio.src = this.voiceLink;
-    this.audio.load();
-
     this.audio.addEventListener('ended', () => {
       this.onEnd();
     });
@@ -101,6 +99,15 @@ export default class AudioBtn extends Vue {
   }
 
   onClick() {
+    if (!this.isLoaded) {
+      this.isLoading = true;
+      // TODO: URL が不正だった場合のエラーハンドリングをどうするか
+      this.audio.src = this.voiceLink;
+      this.audio.load();
+      this.isLoaded = true;
+      this.isLoading = false;
+    }
+
     if (this.isPlaying) {
       this.audio.pause();
       this.audio.currentTime = 0;
