@@ -2,13 +2,15 @@
   <v-container fluid grid-list-md>
     <div class="headline title">
       [{{ convertDate(date) }}] {{ title }}
+      <!--
       <a :href="link" target="_blank">
         <fa :icon="faYouTubeSquare" size="lg" :style="{ color: 'red' }" />
       </a>
+      -->
     </div>
     <v-layout row wrap>
-      <v-flex v-for="quote in quotes" :key="quote.quote" xs6 sm4 md2>
-        <audio-btn :date="date" :title="title" :quote="quote.quote" :time="quote.time" />
+      <v-flex v-for="quote in quotes" :key="quote.path" xs6 sm4 md2>
+        <audio-btn :quote="quote.quote" :time="quote.time" :path="quote.path" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -28,7 +30,7 @@ export default class Broadcast extends Vue {
   /* props */
   @Prop(String) date!: string; // 配信日時(アーカイブ化された日に準拠 / YYYYMMDD)
   @Prop(String) title!: string; // 配信タイトル(アーカイブ化後)
-  @Prop(String) link!: string; // アーカイブの URL
+  // @Prop(String) link!: string; // アーカイブの URL
   @Prop() quotes!: QuoteData; // 発言一覧
 
   /* computed */

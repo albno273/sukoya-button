@@ -28,6 +28,7 @@
       "@types/node",
       "@types/webpack",
       "@nuxt/types",
+      "@nuxtjs/axios",
       "vuetify"
     ]
   },

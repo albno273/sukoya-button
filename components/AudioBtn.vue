@@ -25,10 +25,9 @@ import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 @Component
 export default class AudioBtn extends Vue {
   /* props */
-  @Prop(String) date!: string; // 配信日時(アーカイブ化された日に準拠 / YYYYMMDD)
-  @Prop(String) title!: string; // 配信タイトル(アーカイブ化後)
   @Prop(String) quote!: string; // 発言内容
-  @Prop(String) time!: string; // 発言時間([h:]mm:ss)
+  @Prop(String) time!: string; // 発言時間(h:mm:ss)
+  @Prop(String) path!: string; // GitHub のファイルパス
 
   /* data */
   isPlaying = false; // 再生中かどうか
@@ -46,10 +45,7 @@ export default class AudioBtn extends Vue {
   }
 
   get voiceLink(): string {
-    const repoUri = 'https://raw.githubusercontent.com/albno273/sukoya-button-voices/master/';
-    const bcUri = this.date + '_' + encodeURIComponent(this.title.replace(/\//g, ':'));
-    const fileUri = this.time.replace(/:/g, '_') + '_' + encodeURIComponent(this.quote.replace(/\//g, ':'));
-    return repoUri + bcUri + '/' + fileUri + '.mp3';
+    return 'https://raw.githubusercontent.com/albno273/sukoya-button-voices/master/' + this.path;
   }
 
   /* life cycle methods */
@@ -66,33 +62,25 @@ export default class AudioBtn extends Vue {
   }
 
   /* methods */
-  // [h:]mm:ss -> 「(h時間)mm分ss秒ごろ」に変換
+  // h:mm:ss -> 「(h時間)mm分ss秒ごろ」に変換
   convertTime(time: string | null): string {
     if (time) {
       const split = time.split(':');
       if (this.isTimeHasHour(time)) {
         return Number(split[0]) + '時間' + Number(split[1]) + '分' + split[2] + '秒ごろ';
       } else {
-        return Number(split[0]) + '分' + split[1] + '秒ごろ';
+        return Number(split[1]) + '分' + split[2] + '秒ごろ';
       }
     } else {
       return '';
     }
   }
 
-  // 時間の文字列に「○時間」が含まれてるか確認するだけ
+  // 時間の文字列に「○時間」を含めるか判定するだけ
   isTimeHasHour(time: string | null): boolean {
     if (time) {
-      const colonCnt = time.split(':').length - 1;
-      switch (colonCnt) {
-        case 1:
-          return false;
-        case 2:
-          return true;
-        default:
-          // ここに来たらなにかおかしい
-          return false;
-      }
+      const hour = Number(time.split(':')[0]);
+      return hour !== 0;
     } else {
       return false;
     }
