@@ -1,6 +1,6 @@
 <template>
   <div class="mt-3 mb-5">
-    <div v-if="isNarrowThan750px">
+    <div v-if="isNarrowThan600px">
       <div class="mb-3">
         <v-card outlined>
           <v-container>
@@ -42,7 +42,7 @@ import TwitterTimeLine from '../components/TwitterTimeLine.vue';
 })
 export default class Profile extends Vue {
   /* data */
-  isNarrowThan750px = false;
+  isNarrowThan600px = false;
 
   /* life cycle methods */
   mounted() {
@@ -58,7 +58,7 @@ export default class Profile extends Vue {
 
   /* methods */
   onResize() {
-    this.isNarrowThan750px = window.innerWidth < 750;
+    this.isNarrowThan600px = window.innerWidth < 600;
   }
 }
 </script>
