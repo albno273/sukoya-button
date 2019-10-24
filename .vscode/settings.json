@@ -21,4 +21,7 @@
     "*.tmpl": "vue-html"
   },
   "typescript.tsdk": "node_modules\\typescript\\lib",
+  "cSpell.words": [
+    "Axios"
+  ],
 }
