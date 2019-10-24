@@ -82,20 +82,22 @@ export default class App extends Vue {
     for (let index = 0; index < blobs.length; index++) {
       // 最後の要素
       if (index === blobs.length - 1) {
+        path = blobs[index].path;
+        df = path.split('/');
+
         if (dirname !== blobs[index].path.split('/')[0]) {
-          path = blobs[index].path;
-          df = path.split('/');
           dirname = df[0];
-          filename = df[1];
 
           dt = dirname.split('_');
           date = dt[0];
           title = dt[1].replace(':', '/');
-
-          tq = filename.split(/_/g);
-          quote = tq[tq.length - 1];
-          time = filename.replace(`_${quote}`, '').replace(/_/g, ':');
         }
+
+        filename = df[1];
+
+        tq = filename.split(/_/g);
+        quote = tq[tq.length - 1];
+        time = filename.replace(`_${quote}`, '').replace(/_/g, ':');
 
         quotes.push({
           quote,
@@ -114,6 +116,13 @@ export default class App extends Vue {
 
       if (dirname !== blobs[index + 1].path.split('/')[0]) {
         // ここまでの quotes を書き出してリセット
+
+        quotes.push({
+          quote,
+          time,
+          path,
+        });
+
         broadcasts.push({
           title,
           date,
