@@ -76,8 +76,8 @@ export default class App extends Vue {
     let title = dt[1].replace(':', '/');
 
     let tq = filename.split(/_/g);
-    let quote = tq[tq.length - 1];
-    let time = filename.replace(`_${quote}`, '').replace(/_/g, ':');
+    let quote = tq[tq.length - 1].replace('.mp3', '');
+    let time = filename.replace(`_${quote}.mp3`, '').replace(/_/g, ':');
 
     for (let index = 0; index < blobs.length; index++) {
       // 最後の要素
@@ -96,8 +96,8 @@ export default class App extends Vue {
         filename = df[1];
 
         tq = filename.split(/_/g);
-        quote = tq[tq.length - 1];
-        time = filename.replace(`_${quote}`, '').replace(/_/g, ':');
+        quote = tq[tq.length - 1].replace('.mp3', '');
+        time = filename.replace(`_${quote}.mp3`, '').replace(/_/g, ':');
 
         quotes.push({
           quote,
@@ -148,8 +148,8 @@ export default class App extends Vue {
       title = dt[1].replace(':', '/');
 
       tq = filename.split(/_/g);
-      quote = tq[tq.length - 1];
-      time = filename.replace(`_${quote}`, '').replace(/_/g, ':');
+      quote = tq[tq.length - 1].replace('.mp3', '');
+      time = filename.replace(`_${quote}.mp3`, '').replace(/_/g, ':');
     }
 
     // console.log(broadcasts);
