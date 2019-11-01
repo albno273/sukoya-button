@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-3 mb-5">
+  <div>
     <div v-if="isNarrowThan600px">
       <div class="mb-3">
         <v-card outlined>
@@ -14,17 +14,17 @@
     </div>
     <div v-else>
       <v-card outlined>
-        <v-container>
+        <div class="pa-4">
           <v-row>
             <v-col cols="5">
               <biography />
             </v-col>
             <v-divider vertical />
-            <v-col>
+            <v-col class="py-0">
               <twitter-time-line />
             </v-col>
           </v-row>
-        </v-container>
+        </div>
       </v-card>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div class="twitter-wrapper">
     <a
       class="twitter-timeline"
-      data-height="600"
+      data-height="650"
       data-lang="ja"
       data-border-color="#e91e63"
       data-chrome="noheader nofooter"

@@ -127,6 +127,6 @@ export default class AudioBtn extends Vue {
 
 .time {
   color: gray;
-  font-size: small;
+  font-size: 80%;
 }
 </style>
