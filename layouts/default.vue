@@ -4,7 +4,7 @@
       <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-content>
-      <v-container>
+      <v-container fluid px-4 py-6>
         <nuxt />
       </v-container>
     </v-content>

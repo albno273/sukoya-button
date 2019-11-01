@@ -1,9 +1,9 @@
 <template>
   <div>
     <div align="center">
-      <img :src="profilePicSrc" width="75%" />
+      <img :src="profilePicSrc" width="60%" />
     </div>
-    <div class="name" align="center">
+    <div class="name pt-4" align="center">
       <span class="large"> 健屋 花那<br /> </span>
       すこや かな / Kana Sukoya
     </div>

@@ -9,7 +9,7 @@
       -->
     </div>
     <v-layout row wrap>
-      <v-flex v-for="quote in quotes" :key="quote.path" xs6 sm4 md2>
+      <v-flex v-for="quote in quotes" :key="quote.path" no-gutters>
         <audio-btn :quote="quote.quote" :time="quote.time" :path="quote.path" />
       </v-flex>
     </v-layout>

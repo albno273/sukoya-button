@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-3 mb-5">
+  <div>
     <v-card outlined>
-      <v-container class="py-0">
+      <div class="px-4">
         <v-card-text>
           健屋さんからいつも元気をもらっています。勝手に作ってすみません。問題があれば削除します。<br />
           <br />
@@ -29,7 +29,7 @@
           [2019/10/22] 9万人記念配信の音声を追加<br />
           [2019/10/21] サイト公開
         </v-card-text>
-      </v-container>
+      </div>
     </v-card>
   </div>
 </template>
