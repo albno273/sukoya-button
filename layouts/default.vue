@@ -38,8 +38,8 @@ export default class Default extends Vue {
   mitLicenseUrl = 'https://opensource.org/licenses/MIT';
 }
 </script>
-<style>
+<style scoped>
 .footer {
-  font-size: small;
+  font-size: 0.875rem;
 }
 </style>
