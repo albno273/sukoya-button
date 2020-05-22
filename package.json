@@ -47,6 +47,7 @@
     "nodemon": "^2.0.0",
     "prettier": "^2.0.0",
     "push-dir": "^0.4.1",
+    "ts-loader": "^7.0.4",
     "vue-jest": "^3.0.0",
     "vue-property-decorator": "^8.2.2"
   }
