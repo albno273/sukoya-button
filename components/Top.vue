@@ -36,6 +36,7 @@ export default class Top extends Vue {
   nijiSanjiWikiButtonUrl = 'https://wikiwiki.jp/nijisanji/%E2%97%8B%E2%97%8B%E3%83%9C%E3%82%BF%E3%83%B3';
   gitHubIssueUrl =
     'https://github.com/albno273/sukoya-button/issues/new?assignees=&labels=add+voice&template=add-voice.md&title=';
+
   twitterUrl = 'https://twitter.com/albNo273';
 }
 </script>

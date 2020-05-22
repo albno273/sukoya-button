@@ -58,9 +58,9 @@ export default class App extends Vue {
   }
 
   splitQuoteArr(voices: VoiceFile[]): BroadcastData[] {
-    // ディレクトリを除外
+    // ディレクトリと README に関するファイルを除外
     const blobs = voices.filter((voice, _) => {
-      return voice.type !== 'tree';
+      return voice.type !== 'tree' && !voice.path.endsWith('.md') && !voice.path.endsWith('.png');
     });
 
     let quotes: QuoteData[] = [];

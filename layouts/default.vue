@@ -33,6 +33,7 @@ export default class Default extends Vue {
       to: '/inspire',
     },
   ];
+
   title = 'すこやボタン';
 
   mitLicenseUrl = 'https://opensource.org/licenses/MIT';
