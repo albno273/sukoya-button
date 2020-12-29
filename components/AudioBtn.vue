@@ -1,16 +1,16 @@
 <template>
-  <v-card class="mx-auto" height="100%" :loading="isLoading" @click.native="onClick()">
-    <v-card-text class="button-content pa-2">
-      <v-row align="stretch" justify="center" class="button-content ml-1 mr-0">
+  <v-card class="mx-auto" height="40px" :loading="isLoading" @click.native="onClick()">
+    <v-card-text class="button-content pa-0">
+      <v-row align="stretch" justify="center" class="button-content ml-2 mr-2 mt-1">
         <v-col align-self="center" justify-self="center" class="pa-0 status-icon" cols="1">
           <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: '#e91e63' }" />
           <fa v-else :icon="faPlay" size="lg" :style="{ color: '#e91e63' }" />
         </v-col>
-        <v-col align-self="center" justify-self="center" class="py-0 pl-3 pr-0" cols="11">
+        <v-col align-self="center" justify-self="center" class="py-0 pl-2 pr-0" cols="11">
           <v-row class="mx-0 quote">
             {{ quote }}
           </v-row>
-          <v-row class="mx-0 time">
+          <v-row class="mx-0 mt-1 time">
             {{ convertTime(time) }}
           </v-row>
         </v-col>
