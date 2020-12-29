@@ -11,9 +11,7 @@
         <a :href="twitterUrl" target="_blank">Twitter</a>
       </v-card-text>
       <v-divider />
-      <v-card-title>
-        オマージュ / 参考 / 先駆者さま
-      </v-card-title>
+      <v-card-title> オマージュ / 参考 / 先駆者さま </v-card-title>
       <v-card-text>
         <a :href="sanaButtonUrl" target="_blank">さなボタン(2)</a> さま<br />
         <a :href="nijiSanjiWikiButtonUrl" target="_blank">にじさんじ所属ライバー ボタン</a> 製作者の皆さま

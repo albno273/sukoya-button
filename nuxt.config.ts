@@ -8,7 +8,7 @@ export default {
       ['@babel/plugin-proposal-class-properties', { loose: true }],
     ],
   },
-  mode: 'spa',
+  ssr: false,
   /*
    ** Headers of the page
    */

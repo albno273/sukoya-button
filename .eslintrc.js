@@ -4,11 +4,11 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    jest: true
+    jest: true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
   },
   extends: [
     'eslint:recommended',
@@ -18,7 +18,7 @@ module.exports = {
     'plugin:vue/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
-    'prettier/vue'
+    'prettier/vue',
   ],
   plugins: ['vue', '@typescript-eslint', 'prettier'],
   // add your custom rules here
@@ -32,11 +32,10 @@ module.exports = {
         jsxBracketSameLine: true,
         printWidth: 120,
         tabWidth: 2,
-        semi: true
-      }
+        semi: true,
+      },
     ],
     'nuxt/no-cjs-in-config': 'off',
-    '@typescript-eslint/interface-name-prefix': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-inferrable-types': 'warn',
@@ -47,13 +46,13 @@ module.exports = {
         ignoreTrailingComments: true,
         ignoreUrls: true,
         ignoreTemplateLiterals: true,
-        ignoreRegExpLiterals: true
-      }
+        ignoreRegExpLiterals: true,
+      },
     ],
     'no-extra-semi': 'error',
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
     'prefer-const': 'warn',
-    'no-console': 'off'
-  }
-}
+    'no-console': 'off',
+  },
+};

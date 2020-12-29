@@ -20,6 +20,7 @@ import { BroadcastData, QuoteData, VoiceFile } from '../types/index';
 import Information from '../components/Information.vue';
 import Broadcast from '../components/Broadcast.vue';
 import Profile from '../components/Profile.vue';
+import { Context } from '~/types/nuxt';
 
 @Component({
   components: {
@@ -27,7 +28,19 @@ import Profile from '../components/Profile.vue';
     Broadcast,
     Profile,
   },
-  async asyncData({ $axios }) {
+})
+export default class App extends Vue {
+  /* data */
+  results: VoiceFile[] = [];
+  broadcasts: BroadcastData[] = [];
+
+  /* methods */
+  mounted() {
+    // 配信ごとに区切って整形する
+    this.broadcasts = this.splitQuoteArr(this.results);
+  }
+
+  async asyncData({ $axios }: Context) {
     let tree: VoiceFile[] = [];
 
     const getHeadUrl = 'https://api.github.com/repos/albno273/sukoya-button-voices/commits/master';
@@ -44,17 +57,6 @@ import Profile from '../components/Profile.vue';
     return {
       results: tree,
     };
-  },
-})
-export default class App extends Vue {
-  /* data */
-  results: VoiceFile[] = [];
-  broadcasts: BroadcastData[] = [];
-
-  /* methods */
-  mounted() {
-    // 配信ごとに区切って整形する
-    this.broadcasts = this.splitQuoteArr(this.results);
   }
 
   splitQuoteArr(voices: VoiceFile[]): BroadcastData[] {

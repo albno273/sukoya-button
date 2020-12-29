@@ -49,13 +49,13 @@ export default class AudioBtn extends Vue {
   }
 
   /* life cycle methods */
-  mounted() {
+  mounted(): void {
     this.audio.addEventListener('ended', () => {
       this.onEnd();
     });
   }
 
-  beforeDestroy() {
+  beforeDestroy(): void {
     this.audio.removeEventListener('ended', () => {
       this.onEnd();
     });
@@ -86,7 +86,7 @@ export default class AudioBtn extends Vue {
     }
   }
 
-  onClick() {
+  onClick(): void {
     if (!this.isLoaded) {
       this.isLoading = true;
       // TODO: URL が不正だった場合のエラーハンドリングをどうするか
@@ -107,7 +107,7 @@ export default class AudioBtn extends Vue {
   }
 
   // 再生終了したとき
-  onEnd() {
+  onEnd(): void {
     this.isPlaying = false;
   }
 }

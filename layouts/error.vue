@@ -6,9 +6,7 @@
     <h1 v-else>
       {{ otherError }}
     </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+    <NuxtLink to="/"> Home page </NuxtLink>
   </v-app>
 </template>
 
@@ -21,20 +19,22 @@ export default class Error extends Vue {
   public static layout = 'empty';
 
   /* props */
-  @Prop({ type: Object, default: null }) error!: object;
+  @Prop({ type: Object, default: null }) error!: Record<string, unknown>;
 
   /* data */
   pageNotFound = '404 Not Found';
   otherError = 'An error occurred';
 
   /* head */
-  head() {
+  head(): string {
     if ('statusCode' in this.error) {
       // FIXME: object のプロパティ存在判定チェックどう通ればいいんだ…
       const err = this.error as { statusCode?: number };
       const title = err.statusCode === 404 ? this.pageNotFound : this.otherError;
 
       return title;
+    } else {
+      return this.otherError;
     }
   }
 }
