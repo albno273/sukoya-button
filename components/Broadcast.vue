@@ -50,7 +50,7 @@ export default class Broadcast extends Vue {
 </script>
 <style>
 .title {
-  color: #03a9f4;
+  color: var(--v-broadcast-title-base);
   margin: auto;
 }
 </style>

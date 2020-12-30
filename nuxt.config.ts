@@ -80,12 +80,13 @@ export default {
         light: {
           primary: '#e91e63',
           secondary: '#880e4f',
-          accent: '#03a9f4',
-          error: '#f44336',
-          warning: '#ff9800',
-          info: '#4caf50',
-          success: '#3f51b5',
+          'nav-drawer': '#fff',
+          'broadcast-title': '#03a9f4',
+          'btn-primary': '#FF69B4', // hotpink
         },
+      },
+      options: {
+        customProperties: true,
       },
     },
   },

@@ -1,22 +1,18 @@
 <template>
-  <v-card class="mx-auto" height="40px" :loading="isLoading" @click.native="onClick()">
-    <v-card-text class="button-content pa-0">
-      <v-row align="stretch" justify="center" class="button-content ml-2 mr-2 mt-1">
-        <v-col align-self="center" justify-self="center" class="pa-0 status-icon" cols="1">
-          <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: '#e91e63' }" />
-          <fa v-else :icon="faPlay" size="lg" :style="{ color: '#e91e63' }" />
-        </v-col>
-        <v-col align-self="center" justify-self="center" class="py-0 pl-2 pr-0" cols="11">
-          <v-row class="mx-0 quote">
-            {{ quote }}
-          </v-row>
-          <v-row class="mx-0 mt-1 time">
-            {{ convertTime(time) }}
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+  <v-btn block class="voice-button" color="btn-primary" :loading="isLoading" @click.native="onClick()">
+    <div class="voice-button-status-icon">
+      <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: 'white' }" />
+      <fa v-else :icon="faPlay" size="lg" :style="{ color: 'white' }" />
+    </div>
+    <div class="voice-button-content">
+      <div class="voice-button-content-quote">
+        {{ quote }}
+      </div>
+      <div class="voice-button-content-time">
+        {{ convertTime(time) }}
+      </div>
+    </div>
+  </v-btn>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
@@ -112,21 +108,28 @@ export default class AudioBtn extends Vue {
   }
 }
 </script>
-<style>
-.button-content {
-  height: 100%;
-}
+<style lang="scss" scoped>
+.voice-button {
+  height: 45px !important;
+  padding: 0 5px !important;
 
-.status-icon {
-  text-align: center;
-}
+  &-status-icon {
+    width: 20px;
+    text-align: center;
+    margin: 0 5px;
+  }
 
-.quote {
-  color: black;
-}
+  &-content {
+    width: calc(100% - 20px);
 
-.time {
-  color: gray;
-  font-size: 80%;
+    &-quote {
+      color: white;
+    }
+
+    &-time {
+      color: pink;
+      font-size: 80%;
+    }
+  }
 }
 </style>

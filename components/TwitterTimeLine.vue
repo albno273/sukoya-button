@@ -4,7 +4,7 @@
       class="twitter-timeline"
       data-height="650"
       data-lang="ja"
-      data-border-color="#e91e63"
+      data-border-color="primary"
       data-chrome="noheader nofooter"
       href="https://twitter.com/sukosuko_sukoya?ref_src=twsrc%5Etfw"
     >
