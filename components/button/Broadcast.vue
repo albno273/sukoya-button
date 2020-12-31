@@ -18,8 +18,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
-import { QuoteData } from '../types/index';
-import AudioBtn from './AudioBtn.vue';
+import { QuoteData } from '~/types/index';
+import AudioBtn from '~/components/button/AudioBtn.vue';
 
 @Component({
   components: {

@@ -21,7 +21,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import TwitterShare from './TwitterShare.vue';
+import TwitterShare from '~/components/common/TwitterShare.vue';
 
 @Component({
   components: {

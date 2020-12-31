@@ -17,9 +17,9 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import {} from '@nuxtjs/axios';
 import { BroadcastData, QuoteData, VoiceFile } from '../types/index';
-import Information from '../components/Information.vue';
-import Broadcast from '../components/Broadcast.vue';
-import Profile from '../components/Profile.vue';
+import Information from '~/components/common/Information.vue';
+import Broadcast from '~/components/button/Broadcast.vue';
+import Profile from '~/components/common/Profile.vue';
 import { Context } from '~/types/nuxt';
 
 @Component({

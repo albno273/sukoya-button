@@ -31,8 +31,8 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import Biography from '../components/Biography.vue';
-import TwitterTimeLine from '../components/TwitterTimeLine.vue';
+import Biography from '~/components/common/Biography.vue';
+import TwitterTimeLine from '~/components/common/TwitterTimeLine.vue';
 
 @Component({
   components: {

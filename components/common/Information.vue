@@ -6,8 +6,8 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import Top from './Top.vue';
-import Update from './Update.vue';
+import Top from '~/components/common/Top.vue';
+import Update from '~/components/common/Update.vue';
 
 @Component({
   components: {

@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import AppHeader from '../components/AppHeader.vue';
+import AppHeader from '~/components/common/AppHeader.vue';
 
 @Component({
   components: {

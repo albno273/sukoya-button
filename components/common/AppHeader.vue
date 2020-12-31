@@ -34,13 +34,11 @@ export default class AppHeader extends Vue {
       title: 'Button',
       to: '/',
     },
-    /*
     {
       icon: 'mdi-music-clef-treble',
       title: 'Juke Box',
       to: '/jukebox',
     },
-    */
   ];
 }
 </script>
