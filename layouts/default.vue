@@ -1,12 +1,12 @@
 <template>
   <v-app light>
     <app-header />
-    <v-content>
+    <v-content color="white">
       <v-container fluid px-4 py-6>
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer class="white--text" :fixed="fixed" app color="secondary">
+    <v-footer app color="primary white--text">
       <span class="footer"> 音声の著作権は、全て「にじさんじ所属 公式バーチャルライバー 健屋花那」に帰属します。 </span>
       <span class="footer"
         >コードは

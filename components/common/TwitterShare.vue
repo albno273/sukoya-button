@@ -4,7 +4,7 @@
       href="https://twitter.com/share"
       class="twitter-share-button"
       data-url="https://www.sukoya-kana.live"
-      data-text="すこやボタン"
+      data-text="すこやすこ！"
       data-lang="ja"
       data-hashtags="すこやカルテ"
       data-show-count="true"

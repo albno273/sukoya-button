@@ -2,3 +2,36 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+@import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP);
+
+$body-font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', san-serif !important;
+
+.v-expansion-panel-header {
+  color: var(--v-primary-base) !important;
+}
+
+.v-footer {
+  a {
+    color: white !important;
+  }
+}
+
+.v-navigation-drawer {
+  &__content {
+    border-bottom: solid 1px white;
+  }
+
+  &__border {
+    background-color: white !important;
+  }
+}
+
+.v-divider, .v-card {
+  border-color: var(--v-primary-base) !important;
+}
+
+.v-btn.outlined {
+  border-radius: 24px 4px;
+}

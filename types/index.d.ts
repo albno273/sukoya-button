@@ -27,10 +27,9 @@ export interface VoiceFile {
 export interface YouTubeVideo {
   videoId: string;
   title?: string; // 動画のタイトル
-  song?: SongProfile; // 歌ってみたの場合の原作者
-  with?: Array<VtuberProfile>; // 共演者
-  date: Date; // 公開日
-  isActive: false; // for lazy loading
+  song?: SongProfile; // 歌ってみたの場合の楽曲データ
+  coStars?: Array<VtuberProfile>; // 共演者
+  date: string; // 公開日
 }
 
 // Vtuber のプロフィール

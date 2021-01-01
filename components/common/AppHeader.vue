@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+  <div>
+    <v-navigation-drawer v-model="drawer" color="white--text primary" dark permanent expand-on-hover app>
       <v-list>
         <v-list-item v-for="(page, i) in pages" :key="i" :to="page.to" router exact>
           <v-list-item-action>
@@ -12,11 +12,14 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" class="white--text" fixed app color="primary">
-      <v-app-bar-nav-icon :color="'nav-drawer'" @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+    <v-app-bar app flat color="primary">
+      <!--
+      <v-app-bar-nav-icon class="primary" color="white" @click.stop="drawer = !drawer" />
+      -->
+      <v-icon class="header-icon" color="white" large> mdi-gamepad-round-outline mdi-rotate-45 </v-icon>
+      <v-toolbar-title class="white--text font-weight-bold" v-text="title" />
     </v-app-bar>
-  </header>
+  </div>
 </template>
 
 <script lang="ts">
@@ -26,7 +29,7 @@ import { Component, Vue } from 'nuxt-property-decorator';
 export default class AppHeader extends Vue {
   // data
   drawer = false;
-  title = 'すこやボタン';
+  title = 'すこやすこ！';
 
   pages = [
     {
@@ -44,6 +47,10 @@ export default class AppHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.header-icon {
+  padding-right: 10px;
+}
+
 .v-toolbar__title {
   overflow: visible !important;
   margin-right: 50px !important;

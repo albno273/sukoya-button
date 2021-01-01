@@ -1,11 +1,10 @@
 <template>
-  <v-card outlined>
-    <div class="px-4">
+  <v-card color="primary--text" outlined shaped>
+    <div class="px-2">
       <v-card-text>
         健屋さんからいつも元気をもらっています。勝手に作ってすみません。問題があれば削除します。<br />
-        <br />
         よかったら宣伝してください。
-        <twitter-share /><br />
+        <twitter-share />
         問い合わせや音声の追加依頼はこちらにお願いします:
         <a :href="gitHubIssueUrl" target="_blank">GitHub issue</a> or
         <a :href="twitterUrl" target="_blank">Twitter</a>

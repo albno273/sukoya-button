@@ -1,10 +1,12 @@
 <template>
   <div>
-    <v-card class="mx-auto">
+    <v-card class="mx-auto" color="primary--text" outlined shaped>
       <v-img :src="thumbnailUrl" :aspect-ratio="16 / 9" @click.stop="isOpenModal = true" />
-      <v-card-title>{{ videoData.title || videoData.song.title }} </v-card-title>
-      <v-card-subtitle> {{ dateStr }} </v-card-subtitle>
-      <v-card-text> </v-card-text>
+      <v-card-title>{{ title }} </v-card-title>
+      <v-card-subtitle> {{ date }} </v-card-subtitle>
+      <v-card-text>
+        <you-tube-card-description :song="videoData.song" :co-stars="videoData.coStars" />
+      </v-card-text>
     </v-card>
     <!-- FIXME: 幅 700px 以下だと下枠が微妙に余る -->
     <v-dialog v-model="isOpenModal" :max-width="640" @click:outside="onCloseModal">
@@ -27,8 +29,13 @@
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { DateTime } from 'luxon';
 import { YouTubeVideo } from '~/types/index';
+import YouTubeCardDescription from '~/components/jukebox/YouTubeCardDescription.vue';
 
-@Component
+@Component({
+  components: {
+    YouTubeCardDescription,
+  },
+})
 export default class YouTubeCard extends Vue {
   @Prop({ type: Object }) videoData: YouTubeVideo;
 
@@ -40,8 +47,21 @@ export default class YouTubeCard extends Vue {
     return 'https://img.youtube.com/vi/' + this.videoData.videoId + '/sddefault.jpg';
   }
 
-  get dateStr(): string {
-    return DateTime.fromJSDate(this.videoData.date).toFormat('yyyy/M/d');
+  // 歌動画かどうか
+  get isSong(): boolean {
+    return this.videoData.song !== undefined;
+  }
+
+  get title(): string {
+    if (this.isSong && this.videoData.song) {
+      return this.videoData.song.title;
+    } else {
+      return this.videoData.title || '';
+    }
+  }
+
+  get date(): string {
+    return DateTime.fromISO(this.videoData.date).toFormat('yyyy/M/d');
   }
 
   ready(): void {

@@ -1,6 +1,6 @@
 <template>
   <v-container fluid grid-list-md>
-    <div class="headline title">
+    <div class="broadcast-title">
       [{{ convertDate(date) }}] {{ title }}
       <!--
       <a :href="link" target="_blank">
@@ -48,9 +48,9 @@ export default class Broadcast extends Vue {
   }
 }
 </script>
-<style>
-.title {
-  color: var(--v-broadcast-title-base);
-  margin: auto;
+<style lang="scss" scoped>
+.broadcast-title {
+  font-size: 1.25em;
+  color: var(--v-primary-base);
 }
 </style>

@@ -13,7 +13,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'すこやボタン',
+    title: 'すこやすこ！',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -74,15 +74,13 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
     theme: {
       dark: false,
       themes: {
         light: {
           primary: '#e91e63',
           secondary: '#880e4f',
-          'nav-drawer': '#fff',
-          'broadcast-title': '#03a9f4',
-          'btn-primary': '#FF69B4', // hotpink
         },
       },
       options: {

@@ -20,3 +20,10 @@ export const hayase: VtuberProfile = {
   youTubeId: 'UC2OacIzd2UxGHRGhdHl1Rhw',
   twitterId: 'SouHayase',
 };
+
+export const tomoe: VtuberProfile = {
+  name: '白雪巴',
+  unit: 'Nijisanji',
+  youTubeId: 'UCuvk5PilcvDECU7dDZhQiEw',
+  twitterId: 'Tomoe_Shirayuki',
+};

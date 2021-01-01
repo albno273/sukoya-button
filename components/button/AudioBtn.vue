@@ -1,8 +1,8 @@
 <template>
-  <v-btn block class="voice-button" color="btn-primary" :loading="isLoading" @click.native="onClick()">
+  <v-btn class="voice-button outlined" color="primary" block outlined :loading="isLoading" @click.native="onClick()">
     <div class="voice-button-status-icon">
-      <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: 'white' }" />
-      <fa v-else :icon="faPlay" size="lg" :style="{ color: 'white' }" />
+      <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: 'var(--v-primary-base)' }" />
+      <fa v-else :icon="faPlay" size="lg" :style="{ color: 'var(--v-primary-base)' }" />
     </div>
     <div class="voice-button-content">
       <div class="voice-button-content-quote">
@@ -123,11 +123,11 @@ export default class AudioBtn extends Vue {
     width: calc(100% - 20px);
 
     &-quote {
-      color: white;
+      color: var(--v-primary-base);
     }
 
     &-time {
-      color: pink;
+      color: var(--v-primary-base);
       font-size: 80%;
     }
   }
