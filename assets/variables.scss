@@ -3,19 +3,16 @@
 // The variables you want to modify
 // $font-size-root: 20px;
 
-@import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP);
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=M+PLUS+Rounded+1c:wght@500&display=swap');
 
-$body-font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', san-serif !important;
+$body-font-family: 'Comfortaa', 'M PLUS Rounded 1c', san-serif !important;
 
-.v-expansion-panel-header {
-  color: var(--v-primary-base) !important;
+a {
+  color: var(--v-official-base) !important;
 }
 
-.v-footer {
-  a {
-    color: white !important;
-  }
+.v-expansion-panel-header {
+  color: var(--v-official-base) !important;
 }
 
 .v-navigation-drawer {
@@ -29,9 +26,49 @@ $body-font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', san-serif !important;
 }
 
 .v-divider, .v-card {
-  border-color: var(--v-primary-base) !important;
+  border-color: var(--v-official-base) !important;
+}
+
+.text-card {
+
+  & .v-card__title {
+    color: white;
+    font-size: 1.5rem;
+    border: 1px solid var(--v-official-base);
+    border-radius: 23px 2px 0 0 !important;
+    background-color: var(--v-official-base);
+  }
+
+  & .v-card__text {
+    color: var(--v-text-base);
+    padding-top: 16px;
+
+    div {
+      color: var(--v-text-base);
+    }
+  }
+}
+
+.v-btn {
+  background: var(--v-official2-base);
 }
 
 .v-btn.outlined {
   border-radius: 24px 4px;
+}
+
+.v-list-item__title, .v-list-item__action > i {
+  color: var(--v-text-base);
+}
+
+.v-list-item--active {
+  .v-list-item__title {
+    color: var(--v-official-base);
+  }
+}
+
+.v-footer {
+  span {
+    color: var(--v-text-base);
+  }
 }

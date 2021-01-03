@@ -15,6 +15,7 @@
     </div>
   </div>
 </template>
+
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator';
 import { SongProfile, VtuberProfile } from '~/types';
@@ -24,7 +25,7 @@ export default class YouTubeCardDescription extends Vue {
   @Prop({ type: Object }) song: SongProfile;
   @Prop({ type: Array }) coStars: Array<VtuberProfile> | undefined;
 
-  // computed
+  /* computed */
   get artist(): string {
     return this.song.artist || this.song.composer;
   }
@@ -34,6 +35,7 @@ export default class YouTubeCardDescription extends Vue {
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .yt-desc-costars {
   display: inline-block;

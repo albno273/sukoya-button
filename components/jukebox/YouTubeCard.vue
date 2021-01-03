@@ -1,11 +1,11 @@
 <template>
   <div>
-    <v-card class="mx-auto" color="primary--text" outlined shaped>
+    <v-card outlined shaped class="mx-auto" color="official--text">
       <v-img :src="thumbnailUrl" :aspect-ratio="16 / 9" @click.stop="isOpenModal = true" />
       <v-card-title>{{ title }} </v-card-title>
       <v-card-subtitle> {{ date }} </v-card-subtitle>
       <v-card-text>
-        <you-tube-card-description :song="videoData.song" :co-stars="videoData.coStars" />
+        <you-tube-card-text-card :song="videoData.song" :co-stars="videoData.coStars" />
       </v-card-text>
     </v-card>
     <!-- FIXME: 幅 700px 以下だと下枠が微妙に余る -->
@@ -25,6 +25,7 @@
     </v-dialog>
   </div>
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { DateTime } from 'luxon';
@@ -39,10 +40,10 @@ import YouTubeCardDescription from '~/components/jukebox/YouTubeCardDescription.
 export default class YouTubeCard extends Vue {
   @Prop({ type: Object }) videoData: YouTubeVideo;
 
-  // data
+  /* data */
   isOpenModal = false;
 
-  // computed
+  /* computed */
   get thumbnailUrl(): string {
     return 'https://img.youtube.com/vi/' + this.videoData.videoId + '/sddefault.jpg';
   }
@@ -65,15 +66,15 @@ export default class YouTubeCard extends Vue {
   }
 
   ready(): void {
-    console.log('ready');
+    // console.log('ready');
   }
 
   ended(): void {
-    console.log('ended');
+    // console.log('ended');
   }
 
   playing(): void {
-    console.log('stop');
+    // console.log('stop');
   }
 
   onCloseModal(): void {
@@ -83,4 +84,3 @@ export default class YouTubeCard extends Vue {
   }
 }
 </script>
-<style lang="scss" scoped></style>

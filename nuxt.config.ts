@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Configuration } from 'webpack';
 
 export default {
@@ -79,8 +80,12 @@ export default {
       dark: false,
       themes: {
         light: {
-          primary: '#e91e63',
-          secondary: '#880e4f',
+          primary: '#FF69B4', // hotpink
+          secondary: '#FFB6C1', // lightpink
+          official: '#FF2FA2', // official color
+          official2: '#F9DFED', // official color 2
+          former: '#FF9AB3', // former twitter bg color
+          text: '#666666',
         },
       },
       options: {

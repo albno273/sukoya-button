@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" color="white--text primary" dark permanent expand-on-hover app>
+    <v-navigation-drawer v-model="drawer" app permanent expand-on-hover color="official2">
       <v-list>
-        <v-list-item v-for="(page, i) in pages" :key="i" :to="page.to" router exact>
+        <v-list-item v-for="(page, i) in pages" :key="i" :to="page.to" router exact color="official">
           <v-list-item-action>
             <v-icon>{{ page.icon }}</v-icon>
           </v-list-item-action>
@@ -12,12 +12,13 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar app flat color="primary">
+    <v-app-bar app flat color="official2">
       <!--
-      <v-app-bar-nav-icon class="primary" color="white" @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon class="official" color="white" @click.stop="drawer = !drawer" />
       -->
-      <v-icon class="header-icon" color="white" large> mdi-gamepad-round-outline mdi-rotate-45 </v-icon>
-      <v-toolbar-title class="white--text font-weight-bold" v-text="title" />
+      <!-- TODO: すこやのトレードマーク(角丸の十字)の SVG 作ってここに嵌める -->
+      <v-icon large class="header-icon" color="official"> mdi-gamepad-round-outline </v-icon>
+      <v-toolbar-title class="official--text font-weight-bold" v-text="title" />
     </v-app-bar>
   </div>
 </template>
@@ -33,12 +34,17 @@ export default class AppHeader extends Vue {
 
   pages = [
     {
-      icon: 'mdi-volume-high',
-      title: 'Button',
+      icon: 'mdi-home',
+      title: 'Top',
       to: '/',
     },
     {
-      icon: 'mdi-music-clef-treble',
+      icon: 'mdi-comment-processing',
+      title: 'Button',
+      to: '/button',
+    },
+    {
+      icon: 'mdi-music-circle',
       title: 'Juke Box',
       to: '/jukebox',
     },
@@ -49,18 +55,14 @@ export default class AppHeader extends Vue {
 <style lang="scss" scoped>
 .header-icon {
   padding-right: 10px;
+
+  &::before {
+    animation: mdi-spin 4s infinite linear;
+  }
 }
 
 .v-toolbar__title {
   overflow: visible !important;
   margin-right: 50px !important;
-}
-
-.active {
-  color: white;
-}
-
-.v-tab:not(.v-tab--active) {
-  color: pink !important;
 }
 </style>

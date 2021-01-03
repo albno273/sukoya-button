@@ -18,7 +18,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
-import { QuoteData } from '~/types/index';
+import { QuoteData } from '~/types';
 import AudioBtn from '~/components/button/AudioBtn.vue';
 
 @Component({
@@ -34,12 +34,14 @@ export default class Broadcast extends Vue {
   @Prop() quotes!: QuoteData; // 発言一覧
 
   /* computed */
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get faYouTubeSquare() {
     return faYoutubeSquare;
   }
 
   /* methods */
   // 配信日にスラッシュ入れるだけ
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   convertDate(date: string) {
     const y = date.slice(0, 4);
     const m = date.slice(4, 6);
@@ -51,6 +53,6 @@ export default class Broadcast extends Vue {
 <style lang="scss" scoped>
 .broadcast-title {
   font-size: 1.25em;
-  color: var(--v-primary-base);
+  color: var(--v-official-base);
 }
 </style>
