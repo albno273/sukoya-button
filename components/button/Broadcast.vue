@@ -1,6 +1,6 @@
 <template>
   <v-container fluid grid-list-md>
-    <div class="headline title">
+    <div class="broadcast-title">
       [{{ convertDate(date) }}] {{ title }}
       <!--
       <a :href="link" target="_blank">
@@ -18,8 +18,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
-import { QuoteData } from '../types/index';
-import AudioBtn from './AudioBtn.vue';
+import { QuoteData } from '~/types';
+import AudioBtn from '~/components/button/AudioBtn.vue';
 
 @Component({
   components: {
@@ -34,12 +34,14 @@ export default class Broadcast extends Vue {
   @Prop() quotes!: QuoteData; // 発言一覧
 
   /* computed */
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get faYouTubeSquare() {
     return faYoutubeSquare;
   }
 
   /* methods */
   // 配信日にスラッシュ入れるだけ
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   convertDate(date: string) {
     const y = date.slice(0, 4);
     const m = date.slice(4, 6);
@@ -48,9 +50,9 @@ export default class Broadcast extends Vue {
   }
 }
 </script>
-<style>
-.title {
-  color: var(--v-broadcast-title-base);
-  margin: auto;
+<style lang="scss" scoped>
+.broadcast-title {
+  font-size: 1.25em;
+  color: var(--v-official-base);
 }
 </style>

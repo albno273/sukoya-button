@@ -1,8 +1,8 @@
 <template>
-  <v-btn block class="voice-button" color="btn-primary" :loading="isLoading" @click.native="onClick()">
+  <v-btn block outlined class="voice-button outlined" color="official" :loading="isLoading" @click.native="onClick()">
     <div class="voice-button-status-icon">
-      <fa v-if="isPlaying" :icon="faStop" size="lg" :style="{ color: 'white' }" />
-      <fa v-else :icon="faPlay" size="lg" :style="{ color: 'white' }" />
+      <fa v-if="isPlaying" size="lg" :icon="faStop" :style="{ color: 'var(--v-official-base)' }" />
+      <fa v-else size="lg" :icon="faPlay" :style="{ color: 'var(--v-official-base)' }" />
     </div>
     <div class="voice-button-content">
       <div class="voice-button-content-quote">
@@ -14,6 +14,7 @@
     </div>
   </v-btn>
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
@@ -32,10 +33,13 @@ export default class AudioBtn extends Vue {
   audio = new Audio();
 
   /* computed */
+  // TODO: 戻り値の型を IconDefinition にすると怒られる
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get faPlay() {
     return faPlay;
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get faStop() {
     return faStop;
   }
@@ -123,11 +127,11 @@ export default class AudioBtn extends Vue {
     width: calc(100% - 20px);
 
     &-quote {
-      color: white;
+      color: var(--v-official-base);
     }
 
     &-time {
-      color: pink;
+      color: var(--v-official-base);
       font-size: 80%;
     }
   }

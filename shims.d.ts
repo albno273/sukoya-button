@@ -5,3 +5,5 @@ declare module 'webpack-hot-middleware' {
   }
   export default middleware;
 }
+
+declare module 'vue-youtube';

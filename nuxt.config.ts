@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Configuration } from 'webpack';
 
 export default {
@@ -13,7 +14,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'すこやボタン',
+    title: 'すこやすこ！',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -42,7 +43,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~/plugins/vue-youtube' }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -74,15 +75,17 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
     theme: {
       dark: false,
       themes: {
         light: {
-          primary: '#e91e63',
-          secondary: '#880e4f',
-          'nav-drawer': '#fff',
-          'broadcast-title': '#03a9f4',
-          'btn-primary': '#FF69B4', // hotpink
+          primary: '#FF69B4', // hotpink
+          secondary: '#FFB6C1', // lightpink
+          official: '#FF2FA2', // official color
+          official2: '#F9DFED', // official color 2
+          former: '#FF9AB3', // former twitter bg color
+          text: '#666666',
         },
       },
       options: {
