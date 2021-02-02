@@ -35,7 +35,7 @@ export interface YouTubeVideo {
 // Vtuber のプロフィール
 export interface VtuberProfile {
   name: string;
-  unit: 'Nijisanji' | 'Hololive' | 'other'; // 所属する箱 いずれ増やす
+  unit?: 'Nijisanji' | 'Nijisanji ID' | 'Hololive' | 'VurtuaReal' | 'other'; // 所属する箱 いずれ増やす
   youTubeId: string;
   twitterId: string;
 }
@@ -43,9 +43,11 @@ export interface VtuberProfile {
 // 楽曲データ
 
 export interface SongProfile {
+  from?: string; // 出典
   title: string;
   isOriginal: boolean; // オリジナル曲かどうか
   artist?: string; // (歌ってみたの場合の)歌手名
-  lyricist: string; // 作詞者
-  composer: string; // 作曲者
+  lyricist?: string; // 作詞者
+  composer?: string; // 作曲者
+  remixed?: string; // リミキサー
 }

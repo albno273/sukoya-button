@@ -1,6 +1,6 @@
 <template>
   <v-row class="fill-height overflow-y-auto">
-    <v-col v-for="(song, index) in songs" :key="index" cols="12" xs="12" sm="12" md="6" lg="4" xl="3">
+    <v-col v-for="(song, index) in songs" :key="index" cols="12" xs="12" sm="6" md="4" lg="3" xl="3">
       <v-sheet class="fill-height" color="transparent" min-height="250">
         <v-lazy
           v-model="song.isActive"
