@@ -22,7 +22,8 @@
   },
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "cSpell.words": [
-    "Axios"
+    "Axios",
+    "nuxtjs"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

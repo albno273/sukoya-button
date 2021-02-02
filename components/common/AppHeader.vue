@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" app permanent expand-on-hover color="official2">
+    <v-navigation-drawer v-model="drawer" app expand-on-hover color="official2">
       <v-list>
         <v-list-item v-for="(page, i) in pages" :key="i" :to="page.to" router exact color="official">
           <v-list-item-action>
@@ -12,13 +12,15 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
     <v-app-bar app flat color="official2">
-      <!--
-      <v-app-bar-nav-icon class="official" color="white" @click.stop="drawer = !drawer" />
-      -->
-      <!-- TODO: すこやのトレードマーク(角丸の十字)の SVG 作ってここに嵌める -->
-      <v-icon large class="header-icon" color="official"> mdi-gamepad-round-outline </v-icon>
-      <v-toolbar-title class="official--text font-weight-bold" v-text="title" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
+        <!-- TODO: すこやのトレードマーク(角丸の十字)の SVG 作ってここに嵌める -->
+        <v-icon large class="header-icon" color="official" @click.stop="drawer = !drawer">
+          mdi-gamepad-round-outline mdi-spin-45
+        </v-icon>
+      </v-app-bar-nav-icon>
+      <v-toolbar-title class="official--text font-weight-bold" v-text="title"> </v-toolbar-title>
     </v-app-bar>
   </div>
 </template>
@@ -54,8 +56,6 @@ export default class AppHeader extends Vue {
 
 <style lang="scss" scoped>
 .header-icon {
-  padding-right: 10px;
-
   &::before {
     animation: mdi-spin 4s infinite linear;
   }

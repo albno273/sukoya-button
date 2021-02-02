@@ -1,11 +1,13 @@
 <template>
   <v-app light>
     <app-header />
-    <v-content>
+
+    <v-main>
       <v-container fluid px-6 py-6>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
+
     <app-footer />
   </v-app>
 </template>

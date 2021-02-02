@@ -1,5 +1,5 @@
 <template>
-  <v-footer app color="official2">
+  <v-footer app absolute color="official2">
     <span class="footer">
       音声の著作権は、全て「
       <a :href="youtubeChannelUrl" target="_blank">にじさんじ所属 公式バーチャルライバー 健屋花那</a>

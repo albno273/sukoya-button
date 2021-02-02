@@ -1,11 +1,13 @@
 <template>
   <v-row>
     <!-- TODO: レスポンシブ対応 -->
+    <!--
     <v-col xs="0" sm="0" md="4" lg="4" xl="4">
       <v-card class="text-card fill-height" outlined shaped>
         <v-img :src="profilePicSrc" class="bio-image" />
       </v-card>
     </v-col>
+    -->
     <v-col>
       <v-card class="text-card fill-height" outlined shaped>
         <v-card-title> Biography </v-card-title>

@@ -57,6 +57,10 @@ a {
   border-radius: 24px 4px;
 }
 
+.v-app-bar__nav-icon.v-btn {
+  background: transparent;
+}
+
 .v-list-item__title, .v-list-item__action > i {
   color: var(--v-text-base);
 }
