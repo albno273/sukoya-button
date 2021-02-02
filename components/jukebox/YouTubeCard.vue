@@ -5,7 +5,7 @@
       <v-card-title>{{ title }} </v-card-title>
       <v-card-subtitle> {{ date }} </v-card-subtitle>
       <v-card-text>
-        <you-tube-card-text-card :song="videoData.song" :co-stars="videoData.coStars" />
+        <you-tube-card-description :song="videoData.song" :co-stars="videoData.coStars" />
       </v-card-text>
     </v-card>
     <!-- FIXME: 幅 700px 以下だと下枠が微妙に余る -->
