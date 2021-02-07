@@ -6,6 +6,17 @@ const crossick = [vtubers.tomoe];
 
 export const sukoyaSongs: Array<YouTubeVideo> = [
   {
+    videoId: 'cuKvprfWzDQ',
+    song: {
+      title: 'サイノウサンプラー',
+      isOriginal: false,
+      artist: 'koyori (電ポルP) feat. 初音ミク',
+      lyricist: 'koyori (電ポルP)',
+      composer: 'koyori (電ポルP)',
+    },
+    date: '2021-02-07',
+  },
+  {
     videoId: 'oO2IfPx9IGo',
     song: {
       title: 'うっせぇわ',

@@ -18,7 +18,7 @@
     </div>
     <div v-if="!isOriginal && song.artist" class="yt-desc">原曲: {{ song.artist }}</div>
     <div v-if="song.from" class="yt-desc">{{ song.from }} より</div>
-    <div>
+    <div class="yt-desc">
       <div v-if="song.lyricist === song.composer">
         <div v-if="song.lyricist && song.composer" class="yt-desc">作詞曲: {{ song.lyricist }}</div>
       </div>
